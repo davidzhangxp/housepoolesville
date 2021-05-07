@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 import { Navbar } from "./Navbar";
-import { ShowAlert } from "./ShowAlert";
 import "../css/Home.css";
-import { useHistory } from "react-router";
 import { auth } from "../config/Config";
 
+
 export const ForgotPassword = () => {
-    const history = useHistory();
+
     const [email, setEmail] = useState("");
     const [msg, setMsg] = useState("");
-    const backToLogin = () => {
-        window.location = '/login';
-      };
+
     const forgotPassword=(e)=>{
         e.preventDefault();
         auth.sendPasswordResetEmail(email).then(()=>{
-            setMsg("Send you reset password email")
+            setMsg("Already send you reset password email, please check your email box")
+
         }).catch(error =>alert.error(error.message))
       }
   return (
     <div>
-      <Navbar />
-
+    <Navbar />
       <div className="form-container">
         <form id="signin-form" onSubmit={forgotPassword}>
           <ul className="form-items">
@@ -51,7 +48,7 @@ export const ForgotPassword = () => {
           </ul>
         </form>
       </div>
-      {msg && <ShowAlert message={msg} action={backToLogin} />}
+      <h2>{msg}</h2>
     </div>
   );
 };

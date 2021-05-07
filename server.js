@@ -1,7 +1,7 @@
 
 const express = require('express');
 const cors = require('cors')
-const favicon = require('express-favicon')
+
 const stripe = require('stripe')("sk_test_51GqnIjIyLvtqdiJDrVDrowROBqPbSo1h9QtN0CBBpU3vpbLdFIStjo1hC3nXPG8EDXZdRgjJhvVZfktHJE6vCF1Q00KwKeSr39");
 const bodyParser = require('body-parser');
 const path = require('path')
@@ -12,7 +12,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 app.use(express.static(__dirname));
-app.use(favicon(__dirname + 'build/favicon.ico'))
+
 app.use(express.static(path.join(__dirname,'build')))
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname,'build','index.html'))

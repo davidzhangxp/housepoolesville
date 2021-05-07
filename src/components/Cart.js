@@ -11,7 +11,10 @@ export class Cart extends Component {
   componentDidMount() {
     const { _id } = getUserInfo();
     if (!_id) {
-      window.location = "/login";
+      return (<div>
+        <Navbar />
+        <div>Please Login and check your cart</div>
+        </div>)
     } else {
       db.collection("basket")
         .where("userId", "==", _id)

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../css/Home.css";
 import { auth, db } from "../config/Config";
 import { useAlert } from "react-alert";
@@ -13,7 +13,7 @@ import google_login_button from '../images/google_signin_button.png'
 
 
 export const Login = () => {
-  const history = useHistory();
+
   const alert = useAlert();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,7 +51,7 @@ export const Login = () => {
         .then(()=>{
           setEmail("")
           setPassword("")
-          history.goBack();
+          window.location='/'
         }
         )
         .catch((err) =>{
@@ -104,7 +104,7 @@ export const Login = () => {
           }
         })
         .then(()=>{
-          history.goBack()
+          window.location='/';
         })
         .catch((error) => {
           alert.error(error.message);
@@ -155,7 +155,7 @@ export const Login = () => {
         })
       })
       .then(()=>{
-        history.goBack()
+        window.location='/'
       })
       .catch((error) => {
         alert.error(error.message);
