@@ -10,7 +10,7 @@ export const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [msg, setMsg] = useState("");
     const backToLogin = () => {
-        history.push("/login");
+        window.location = '/login';
       };
     const forgotPassword=(e)=>{
         e.preventDefault();
