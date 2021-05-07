@@ -18,6 +18,6 @@ const firebaseConfig = {
   const db = firebase.firestore();
   const storage = firebase.storage();
   const PAYPAL_CLIENT_ID = "AX8q3eq7eAn4nVVQk9IE8hdFdSba9JmZmZeenQZ1QiDSekarf2J1tCcruW7rRJyI19KNEhaer8umhjim";
-  const SERVER_URL = "http://192.168.1.172:8083/payment"
+  const SERVER_URL = "http://localhost:8083/payment"
 
 export{auth,db,storage,PAYPAL_CLIENT_ID,SERVER_URL}

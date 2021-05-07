@@ -44,6 +44,6 @@ app.get("/api/products",(req,res)=>{
 
 
 
-app.listen(8083,"192.168.1.172",()=>{
+app.listen(8083,()=>{
     console.log("sever at http://192.168.1.172:8083")
 })
