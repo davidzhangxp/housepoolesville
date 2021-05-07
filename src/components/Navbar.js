@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 import { Icon } from "react-icons-kit";
 import { home } from "react-icons-kit/icomoon/home";
-import { FaShoppingCart } from "react-icons/fa";
+import cart_icon from "../images/cart_icon.png";
 import firebase from "firebase";
 import { clearUser,  getUserInfo } from "../localStorage";
 import { useAlert } from "react-alert";
@@ -48,10 +48,7 @@ export const Navbar = () => {
           Signup
         </Link>
         <Link to="/cart">
-          <FaShoppingCart
-            style={{ color: "purple", cursor: "pointer" }}
-            size="3rem"
-          />
+          <img src={cart_icon} alt="" />
           </Link>
         {_id !== "" ? (
           <Link to="/profile" className="profile">
