@@ -2,7 +2,7 @@
   "name": "first_baby",
   "version": "0.1.0",
   "engines": {
-    "node": "14.15.5npm --version",
+    "node": "14.15.5",
     "npm": "6.14.11"
   },
   "private": true,
